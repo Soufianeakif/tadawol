@@ -1,3 +1,19 @@
+import subprocess
+import sys
+
+# تثبيت الحزم المطلوبة قبل الاستيراد (طريقة مؤقتة لتجنب خطأ عدم وجود المكتبات)
+required_packages = [
+    "streamlit",
+    "pandas",
+    "requests",
+    "plotly",
+    "streamlit-autorefresh",
+    "ta"
+]
+
+for package in required_packages:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
 import streamlit as st
 st.set_page_config(page_title="Forex Dashboard", layout="wide")  # يجب أن يكون أول شيء في السكريبت
 
